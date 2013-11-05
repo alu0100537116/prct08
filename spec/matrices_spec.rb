@@ -25,7 +25,9 @@ describe Matriz do
 	@M1.to_s.should eq "1 1 \n 2 2 \n "
       end
     end
-	
+
+    
+#### OPERACIONES ARITMETICAS TESTEADAS ####
       describe " Operaciones con matrices" do
 	  
 	  it " Suma de matrices " do
