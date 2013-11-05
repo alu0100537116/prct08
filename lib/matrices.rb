@@ -14,14 +14,14 @@ class Matriz
       
     end
     
-    def []=(i)
+    def [](i)
       @valor[i]
     end
     
     def []=(i,other)
       @valor[i] = other
     end
-  
+#############METODO REPRESENTAR UNA CADENA ##############  
     def to_s
       i=0
       cadena= ""
@@ -39,7 +39,7 @@ class Matriz
      
     end
     
-    
+ ############ METODO SUMA DE MATRICES#############
     def +(other) 
       
       aux=Matriz.new(@col,@fil)
@@ -54,8 +54,53 @@ class Matriz
 	
 	  i=i+1
 	end
-      return aux
+      aux
     end
+    
+############ METODO MULTIPLICAR UNA MATRIZ ###########
+    
+    
+    def *(other)
+      
+      aux=Matriz.new(@col,@fil)
+      i=0
+      while i < @fil
+	j = 0
+	while j < other.col
+	  k = 0
+	  while k < @col
+	    aux[i][j] = aux[i][j] + valor[i][k]*other[i][k]
+	    k=k+1
+	  end
+	  j=j+1
+	end
+	i=i+1
+      end
+      aux
+    end
+    
+    
+############ METODO RESTA DE MATRICES ##################
+    
+    
+    
+    def -(other)
+       aux=Matriz.new(@col,@fil)
+      i=0
+     
+	while i<@fil
+	   j=0
+	  while j<@col
+	    aux[i][j]= valor[i][j] - other[i][j]
+	    j=j+1
+	  end
+	
+	  i=i+1
+	end
+      aux
+    end
+      
+      
 end
 
     
