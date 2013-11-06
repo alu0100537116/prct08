@@ -21,7 +21,7 @@ class Matriz
     def []=(i,other)
       @valor[i] = other
     end
-#############METODO REPRESENTAR UNA CADENA ##############  
+############# METODO REPRESENTAR UNA CADENA ##############  
     def to_s
       i=0
       cadena= ""
