@@ -1,3 +1,4 @@
+require '/home/alu4101/datos/homes.rala/LPP/prct07/lib/fraccion.rb'
 
 class Matriz
     
@@ -5,10 +6,10 @@ class Matriz
   
     def initialize(m,n)
       @fil,@col = m, n
-      @valor=Array.new(@fil,0)
+      @valor=Array.new(@fil,0.0)
       i=0      
       while i < @fil
-	 @valor[i]=Array.new(@col,0)
+	 @valor[i]=Array.new(@col,0.0)
 	 i=i+1
       end
       
@@ -69,7 +70,7 @@ class Matriz
 	while j < other.col
 	  k = 0
 	  while k < @col
-	    aux[i][j] = aux[i][j] + valor[i][k]*other[i][k]
+	    aux[i][j] = (aux[i][j] + valor[i][k])*other[i][k]
 	    k=k+1
 	  end
 	  j=j+1
@@ -98,6 +99,26 @@ class Matriz
 	  i=i+1
 	end
       aux
+    end
+    
+   def faf
+     
+     @valor=Array.new(@fil,0.0)
+  end     
+      
+    def ==(other)
+      i=0
+	while i<@fil
+	  j=0
+	  while j<@col
+	    if 
+	      valor[i][j] == other[i][j]
+	      j=j+1
+	    else
+	      return false
+	    end
+	  end
+	end
     end
       
       
